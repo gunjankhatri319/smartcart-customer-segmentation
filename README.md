@@ -2,13 +2,28 @@
 
 An unsupervised machine learning system designed to segment e-commerce customers by transaction history, engagement patterns, and loyalty metrics to drive personalized marketing and retention strategies.
 
+## 🎯 Live Demo
+
+**[➡️ Open Interactive Dashboard](https://smartcart-customer-segmentationn.streamlit.app/)**
+
+Explore real-time customer segmentation, interactive cluster visualizations, and actionable insights without installing anything locally.
+
 ## 📌 Features & Architecture
 
+### Core ML Features
 - **Data Engineering:** Median income imputation, customer tenure extraction, and spending aggregation across product categories.
 - **Clustering Engine:** K-Means algorithm with optimized cluster evaluation using Silhouette (0.209), Calinski-Harabasz (686.33), and Davies-Bouldin (1.622) scores.
 - **Dimensionality Reduction:** 2D PCA latent mapping for interpretable cluster visualization and analysis.
-- **Interactive Dashboard:** Streamlit-powered UI with real-time customer segmentation inference, cluster analytics, and marketing action plans.
 - **Scalable Pipeline:** Modular architecture supporting batch processing and model retraining.
+
+### Dashboard Capabilities (Live Demo)
+- 📊 **Interactive Cluster Visualizations** - Explore 2D PCA scatter plots with hover information
+- 🎯 **Segment Distribution Charts** - View customer counts and revenue distribution across segments
+- 💰 **Revenue Analytics** - Spending patterns by segment and product category
+- 🔍 **Customer Lookup** - Search by customer ID to view segment assignment and profile
+- 📈 **Trend Analysis** - Historical engagement and purchase trends by segment
+- 🎬 **Marketing Action Plans** - Segment-specific strategies and recommended campaigns
+- 📥 **Export Functionality** - Download segment assignments and reports as CSV/PDF
 
 ## 👥 Customer Personas Identified
 
@@ -97,10 +112,16 @@ smartcart-customer-segmentation/
 
 ## 🚀 Quickstart
 
+### Option A: Try the Live Demo (Recommended for Quick Exploration)
+No installation required! Click the link above to explore the interactive dashboard, view customer segments, and generate insights instantly.
+
+### Option B: Run Locally (For Development & Custom Analysis)
+
 ### Prerequisites
 - Python 3.8 or higher
 - pip or conda package manager
 - 2GB RAM (minimum for model training)
+- Git
 
 ### 1. Clone Repository
 ```bash
@@ -123,6 +144,18 @@ venv\Scripts\activate
 ### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
+```
+
+**Required packages (requirements.txt):**
+```
+streamlit>=1.28.0
+scikit-learn>=1.3.0
+pandas>=2.0.0
+numpy>=1.24.0
+plotly>=5.17.0
+joblib>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.13.0
 ```
 
 ### 4. Prepare Data
@@ -208,6 +241,44 @@ print(f"Customer assigned to segment: {segment}")
 7. **Visualization** → PCA projection for interpretability
 8. **Inference** → Real-time segment assignment for new customers
 
+## 🌐 Deployment
+
+### Deploy to Streamlit Cloud (Recommended)
+
+1. **Push code to GitHub**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+2. **Connect to Streamlit Cloud**
+   - Go to [share.streamlit.io](https://share.streamlit.io)
+   - Sign in with GitHub
+   - Click "New app"
+   - Select your repository, branch, and main file (`app/dashboard.py`)
+
+3. **Configure Secrets (Optional)**
+   - Add any API keys or credentials in the "Secrets" section
+   - Store as TOML format in `.streamlit/secrets.toml` (local) or dashboard
+
+4. **Deploy**
+   - Streamlit Cloud automatically deploys after GitHub push
+   - App available at `https://<username>-<repo-name>.streamlit.app`
+
+### Current Deployment
+- **Status:** ✅ Live & Active
+- **URL:** [smartcart-customer-segmentationn.streamlit.app](https://smartcart-customer-segmentationn.streamlit.app/)
+- **Last Updated:** September 2026
+- **Uptime:** 24/7 (Streamlit Cloud free tier)
+
+### Local Deployment (Docker)
+```bash
+docker build -t smartcart-segmentation .
+docker run -p 8501:8501 smartcart-segmentation
+```
+(Requires Dockerfile in project root)
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
@@ -241,7 +312,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **Author:** Gunjan Khatri  
 **GitHub:** [@gunjankhatri319](https://github.com/gunjankhatri319)  
-**Email:** gunjan2020khatri@gmail.com  
+**Email:** gunjan2020khatri@gmail.com
 
 **Questions or Issues?** Open an [GitHub Issue](https://github.com/gunjankhatri319/smartcart-customer-segmentation/issues)
 
